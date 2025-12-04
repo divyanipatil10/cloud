@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provide Feedback - Online Store</title>
+    <style>
+        /* Basic Reset & Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Form Container Styling */
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Input and Textarea Styling */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Button Styling */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff; /* Primary action color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .backend-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #7f8c8d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Share Your Experience</h2>
+        <form action="YOUR_BACKEND_PROCESSING_URL" method="POST">
+            <div class="form-group">
+                <label for="name">Name (Optional)</label>
+                <input type="text" id="name" name="name" placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address (Optional)</label>
+                <input type="email" id="email" name="email" placeholder="john.doe@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="feedback_type">Type of Feedback</label>
+                <select id="feedback_type" name="feedback_type" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    <option value="general">General Comment</option>
+                    <option value="complaint">Complaint</option>
+                    <option value="compliment">Compliment/Praise</option>
+                    <option value="suggestion">Feature Suggestion</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Feedback</label>
+                <textarea id="message" name="message" rows="6" placeholder="Tell us how we can improve our online store..."></textarea>
+            </div>
+
+            <button type="submit">Send Feedback</button>
+        </form>
+        <p class="backend-note">
+            *To collect feedback, you need to set up a backend service (e.g., PHP script, Node.js server, or a third-party service like Formspree). Replace `YOUR_BACKEND_PROCESSING_URL` in the `action` attribute.
+        </p>
+    </div>
+
+</body>
+</html>
